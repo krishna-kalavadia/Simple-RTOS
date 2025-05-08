@@ -1,6 +1,6 @@
 # Simple RTOS for STM32F401RE
 
-Implemented a simple real-time operating system on an ARM Cortex-M4 (STM32F401RE) to learn and gain a foundational understanding of C development in a real-time embedded environment. Main features implemented include cooperative and pre-emptive multitasking, SVC system calls, context switching, and basic kernel services.
+Implemented a simple real-time operating system on an ARM Cortex-M4 (STM32F401RE) to learn and gain a foundational understanding of C development in a real-time embedded environment. Main features implemented include cooperative & pre-emptive multitasking, SVC system calls, context switching, and basic kernel services.
 
 
 ## Main Features
@@ -14,12 +14,12 @@ Implemented a simple real-time operating system on an ARM Cortex-M4 (STM32F401RE
 
 - **System Calls & Context Initialization**  
   - Defines custom SVC numbers and a handler (`SVC_Handler_Main`) for supervisor calls  
-  - Builds each thread’s initial context on its PSP: xPSR, PC, LR (exit stub), R0–R3 (arguments), R4–R11
+  - Builds each thread’s initial context on its PSP: xPSR, PC, LR R0–R3 (arguments), R4–R11
 
 - **Kernel API**  
   - `osKernelInitialize()` — capture initial MSP and reset kernel state  
   - `osCreateThread(void (*fn)(void*), void *arg)` — allocate stack, set up context, register a TCB  
-  - `osCreateThreadWithDeadlines(fn, arg, slice_ms, deadline_ms)` — same, plus time-slice and deadline  
+  - `osCreateThreadWithDeadlines(fn, arg, slice_ms, deadline_ms)` — same as above with time-slice and deadline information
   - `osKernelStart()` — start the first thread via SVC  
   - `osYield()` — cooperative context switch trigger  
 
@@ -52,5 +52,3 @@ int main(void) {
 ---
 
 This is a very bare-bones RTOS implementation to learn about real-time systems and related concepts. There are many features omitted that I hope to implement; for example, thread exit handling, dynamic task management, priority-based scheduling, and inter-thread communication, which would make this a more complete implementation.
-
-This RTOS project was developed as a part of MTE-241: Introduction to Computer Structures and Real-Time Systems at the University of Waterloo

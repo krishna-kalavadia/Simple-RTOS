@@ -51,6 +51,6 @@ int main(void) {
 
 ---
 
-This is a very simple, bare-bones RTOS implementation to learn about real-time systems and related concepts. There are many features omitted that I hope to implement; for example, thread exit handling, dynamic task management, priority-based scheduling, and inter-thread communication, which would make this a more complete implementation.
+This is a very bare-bones RTOS implementation to learn about real-time systems and related concepts. There are many features omitted that I hope to implement; for example, thread exit handling, dynamic task management, priority-based scheduling, and inter-thread communication, which would make this a more complete implementation.
 
 This RTOS project was developed as a part of MTE-241: Introduction to Computer Structures and Real-Time Systems at the University of Waterloo

@@ -23,13 +23,12 @@ Implemented a simple real-time operating system on an ARM Cortex-M4 (STM32F401RE
   - `osKernelStart()` — start the first thread via SVC  
   - `osYield()` — cooperative context switch trigger  
 
-- **Scheduling**  
-  - **Cooperative**: threads call `osYield()` → SVC → PendSV → round-robin  
-  - **Pre-emptive**: SysTick @1 ms → decrement per-thread runtime → PendSV when slice expires
+- **Scheduling (Round-Robin)**  
+  - **Cooperative:** threads call `osYield()`, triggering an SVC exception; the PendSV handler then switches to the next thread.  
+  - **Preemptive:** a 1 ms SysTick interrupt decrements the current thread’s time slice; when it hits zero, PendSV is pended to rotate to the next thread.  
 
 - **Argument Passing & Exit Handling**  
   - Uses the ARM ABI (R0) to enable uses to pass arguments when creating threads
-  - Provides a built-in exit stub in LR to free the thread’s stack and invoke the scheduler when a thread returns
 
 ---
 

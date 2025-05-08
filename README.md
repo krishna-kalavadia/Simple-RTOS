@@ -1,6 +1,6 @@
 # Simple RTOS for STM32F401RE
 
-Implemented a simple real-time operating system on an ARM Cortex-M4 (STM32F401RE) to learn and gain a foundational understanding of C development in a real-time embedded environment. Main features implemented include cooperative & pre-emptive multitasking, SVC system calls, context switching, and basic kernel services.
+Implemented a simple real-time operating system on an ARM Cortex-M4 (STM32F401RE) to learn and gain a foundational understanding of C development in a real-time embedded environment. Main features implemented include cooperative and pre-emptive multitasking, SVC system calls, context switching, and basic kernel services.
 
 
 ## Main Features
@@ -52,3 +52,5 @@ int main(void) {
 ---
 
 This is a very bare-bones RTOS implementation to learn about real-time systems and related concepts. There are many features omitted that I hope to implement; for example, thread exit handling, dynamic task management, priority-based scheduling, and inter-thread communication, which would make this a more complete implementation.
+
+This RTOS project was developed as a part of MTE-241: Introduction to Computer Structures and Real-Time Systems at the University of Waterloo

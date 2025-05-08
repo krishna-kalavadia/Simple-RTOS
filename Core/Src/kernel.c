@@ -83,7 +83,7 @@ void osKernelInitialize() {
 	LAST_STACK_ADDR_PTR = PSP_val;
 	STACK_MEM_USAGE += 400;
 
-	// Initialize our TCB thread array
+	// Initialize our TCB thread array for our 7 threads
 	threadArray[0] = thread_1;
 	threadArray[1] = thread_2;
 	threadArray[2] = thread_3;
